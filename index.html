@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who Wants to be a Web Developer?</title>
+    <title>Who Wants to be a Programmer?</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Prism.js for syntax highlighting -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
@@ -13,6 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
 </head>
 <body>
     <div id="game-container">
@@ -20,8 +26,8 @@
             <button id="audio-toggle" class="muted" title="Toggle Audio"></button>
         </div>
         <div id="start-screen" class="screen active">
-            <h1>Who Wants to be a Web Developer?</h1>
-            <p>Test your knowledge of HTML, CSS, and JavaScript!</p>
+            <h1>Who Wants to be a Programmer?</h1>
+            <p>Test your programming knowledge!</p>
             <div id="continue-game-section" class="continue-game-section hidden">
                 <h2>Continue Previous Game?</h2>
                 <p id="saved-game-info">You have a saved game in progress.</p>
@@ -72,7 +78,7 @@
 
         <div id="topic-screen" class="screen">
             <h1>Choose Your Topic</h1>
-            <p id="topic-subtitle">Test your knowledge of HTML, CSS, and JavaScript!</p>
+            <p id="topic-subtitle">Select a quiz topic to test your programming skills!</p>
             <div class="topic-selection" id="topic-buttons">
                 <!-- Topic buttons will be dynamically generated here -->
             </div>
@@ -119,7 +125,7 @@
             <div class="game-layout">
                 <div class="main-area">
                     <div class="question-area">
-                        <div class="question-number">Question <span id="current-question">1</span> of 10</div>
+                        <div class="question-number">Question <span id="current-question">1</span></div>
                         <div class="money-display">For <span id="current-money">1 Ramen Cup</span></div>
                         <div id="question-text">Question will appear here</div>
                         <div class="answers">

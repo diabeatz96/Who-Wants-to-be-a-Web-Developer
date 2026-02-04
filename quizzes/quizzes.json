@@ -1,20 +1,26 @@
 {
-  "default": ["html", "css", "javascript", "sample-custom"],
+  "default": ["cpp", "html", "css", "javascript", "sample-custom"],
   "available": [
     {
+      "id": "cpp",
+      "name": "C++ Basics",
+      "description": "Test your knowledge of C++ fundamentals including cin, cout, variables, and data types",
+      "file": "cpp.json"
+    },
+    {
       "id": "html",
-      "name": "HTML Questions", 
+      "name": "HTML Questions",
       "description": "Test your knowledge of HTML markup and structure",
       "file": "html.json"
     },
     {
       "id": "css",
       "name": "CSS Questions",
-      "description": "Test your knowledge of CSS styling and layout", 
+      "description": "Test your knowledge of CSS styling and layout",
       "file": "css.json"
     },
     {
-      "id": "javascript", 
+      "id": "javascript",
       "name": "JavaScript Questions",
       "description": "Test your knowledge of JavaScript programming and logic",
       "file": "javascript.json"

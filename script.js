@@ -263,7 +263,8 @@ class MillionaireGame {
                 if (gameState.gameMode === 'team') {
                     infoElement.textContent = `Team tournament in progress: ${gameState.teams.length} teams, Question ${gameState.currentQuestion + 1}`;
                 } else {
-                    infoElement.textContent = `Individual game in progress: Question ${gameState.currentQuestion + 1} of 10, Topic: ${gameState.currentTopic.toUpperCase()}`;
+                    const totalQ = gameState.currentQuestions ? gameState.currentQuestions.length : '?';
+                    infoElement.textContent = `Individual game in progress: Question ${gameState.currentQuestion + 1} of ${totalQ}, Topic: ${gameState.currentTopic.toUpperCase()}`;
                 }
             } catch (error) {
                 document.getElementById('saved-game-info').textContent = 'You have a saved game in progress.';
@@ -294,33 +295,19 @@ class MillionaireGame {
             console.log('Binding continue game buttons:', { continueGameBtn, newGameBtn });
             
             if (continueGameBtn) {
-                console.log('Binding continue game button');
                 continueGameBtn.addEventListener('click', (e) => {
-                    console.log('Continue game button clicked');
                     e.preventDefault();
                     e.stopPropagation();
                     this.continueGame();
                 });
-                // Test if button is clickable
-                continueGameBtn.style.border = '2px solid red';
-                continueGameBtn.style.zIndex = '9999';
-            } else {
-                console.error('Continue game button not found!');
             }
-            
+
             if (newGameBtn) {
-                console.log('Binding new game button');
                 newGameBtn.addEventListener('click', (e) => {
-                    console.log('New game button clicked');
                     e.preventDefault();
                     e.stopPropagation();
                     this.startNewGame();
                 });
-                // Test if button is clickable
-                newGameBtn.style.border = '2px solid red';
-                newGameBtn.style.zIndex = '9999';
-            } else {
-                console.error('New game button not found!');
             }
             
             if (deleteAllDataBtn) {
@@ -491,14 +478,19 @@ class MillionaireGame {
     }
 
     loadQuestion() {
-        if (this.currentQuestion >= 10) {
+        const totalQuestions = this.currentQuestions.length;
+
+        if (this.currentQuestion >= totalQuestions) {
             this.endGame(true);
             return;
         }
 
         const question = this.currentQuestions[this.currentQuestion];
-        document.getElementById('current-question').textContent = this.currentQuestion + 1;
-        document.getElementById('current-money').textContent = this.moneyLadder[this.currentQuestion];
+        document.getElementById('current-question').textContent = `${this.currentQuestion + 1} of ${totalQuestions}`;
+
+        // Use money ladder if available, otherwise show question number
+        const moneyIndex = Math.min(this.currentQuestion, this.moneyLadder.length - 1);
+        document.getElementById('current-money').textContent = this.moneyLadder[moneyIndex];
         
         // Parse markdown and apply syntax highlighting
         const questionElement = document.getElementById('question-text');
@@ -695,11 +687,13 @@ class MillionaireGame {
                 // Save game progress
                 this.saveGameState();
                 
-                if (this.currentQuestion < 10) {
+                const totalQuestions = this.currentQuestions.length;
+
+                if (this.currentQuestion < totalQuestions) {
                     setTimeout(() => this.playSound('moneyWin'), 1000);
                 }
-                
-                if (this.currentQuestion >= 10) {
+
+                if (this.currentQuestion >= totalQuestions) {
                     document.getElementById('next-question-btn').textContent = 'Finish Game';
                     setTimeout(() => this.playSound('jackpotWin'), 1000);
                 } else {

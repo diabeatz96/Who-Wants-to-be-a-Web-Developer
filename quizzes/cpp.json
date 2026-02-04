@@ -1,0 +1,340 @@
+{
+  "name": "C++ Basics",
+  "description": "Test your knowledge of C++ fundamentals including cin, cout, variables, and data types",
+  "easy": [
+    {
+      "question": "What is the correct way to output \"Hello World\" to the console in C++?",
+      "answers": [
+        "cout << \"Hello World\";",
+        "print(\"Hello World\");",
+        "printf(\"Hello World\");",
+        "echo \"Hello World\";"
+      ],
+      "correct": 0,
+      "explanation": "In C++, we use 'cout' (console output) with the insertion operator '<<' to display text. The syntax is: cout << \"text\";"
+    },
+    {
+      "question": "Which header file is needed to use `cin` and `cout`?",
+      "answers": [
+        "<iostream>",
+        "<stdio.h>",
+        "<string>",
+        "<cmath>"
+      ],
+      "correct": 0,
+      "explanation": "The <iostream> header file contains the definitions for cin (console input) and cout (console output) in C++."
+    },
+    {
+      "question": "What data type would you use to store a whole number like 42?",
+      "answers": [
+        "int",
+        "double",
+        "char",
+        "string"
+      ],
+      "correct": 0,
+      "explanation": "The 'int' (integer) data type is used to store whole numbers without decimal points. Examples: -5, 0, 42, 1000"
+    },
+    {
+      "question": "What is the correct way to declare a variable named 'age' that stores a whole number?",
+      "answers": [
+        "int age;",
+        "age int;",
+        "var age;",
+        "integer age;"
+      ],
+      "correct": 0,
+      "explanation": "In C++, you declare a variable by specifying the data type first, followed by the variable name. The syntax is: type variableName;"
+    },
+    {
+      "question": "What does `cin >>` do in C++?",
+      "answers": [
+        "Reads input from the user",
+        "Displays output to the screen",
+        "Declares a new variable",
+        "Creates a comment"
+      ],
+      "correct": 0,
+      "explanation": "cin (console input) with the extraction operator '>>' reads input from the user's keyboard and stores it in a variable."
+    },
+    {
+      "question": "Which data type stores a single character like 'A'?",
+      "answers": [
+        "char",
+        "string",
+        "int",
+        "letter"
+      ],
+      "correct": 0,
+      "explanation": "The 'char' data type stores a single character. Characters are enclosed in single quotes: char grade = 'A';"
+    },
+    {
+      "question": "What will this code output?\n\n```cpp\nint x = 5;\ncout << x;\n```",
+      "answers": [
+        "5",
+        "x",
+        "int x",
+        "\"x\""
+      ],
+      "correct": 0,
+      "explanation": "When you use cout << x; without quotes, it outputs the VALUE stored in the variable x, which is 5."
+    },
+    {
+      "question": "What is the correct way to get a number from the user and store it in a variable called 'num'?",
+      "answers": [
+        "cin >> num;",
+        "cin << num;",
+        "cout >> num;",
+        "input(num);"
+      ],
+      "correct": 0,
+      "explanation": "cin >> variableName; reads input from the user and stores it in the variable. The '>>' operator extracts data from the input stream."
+    },
+    {
+      "question": "What data type would you use to store a decimal number like 3.14?",
+      "answers": [
+        "double",
+        "int",
+        "char",
+        "bool"
+      ],
+      "correct": 0,
+      "explanation": "The 'double' data type is used to store decimal (floating-point) numbers. It can store numbers like 3.14, -2.5, or 0.001"
+    },
+    {
+      "question": "What does `endl` do in C++?",
+      "answers": [
+        "Moves to a new line",
+        "Ends the program",
+        "Ends a variable",
+        "Creates an error"
+      ],
+      "correct": 0,
+      "explanation": "endl (end line) moves the cursor to a new line after outputting text. It's like pressing Enter. Example: cout << \"Hello\" << endl;"
+    }
+  ],
+  "medium": [
+    {
+      "question": "What will be the output of this code?\n\n```cpp\nint a = 10;\nint b = 3;\ncout << a / b;\n```",
+      "answers": [
+        "3",
+        "3.33",
+        "3.333333",
+        "10/3"
+      ],
+      "correct": 0,
+      "explanation": "When dividing two integers in C++, the result is also an integer (integer division). 10 / 3 = 3 with the decimal part discarded."
+    },
+    {
+      "question": "What is the difference between `float` and `double`?",
+      "answers": [
+        "double has more precision than float",
+        "float has more precision than double",
+        "There is no difference",
+        "double only stores whole numbers"
+      ],
+      "correct": 0,
+      "explanation": "double provides more precision (about 15 decimal places) compared to float (about 7 decimal places). double uses 8 bytes while float uses 4 bytes."
+    },
+    {
+      "question": "What will this code output?\n\n```cpp\ncout << \"Value: \" << 5 + 3 << endl;\n```",
+      "answers": [
+        "Value: 8",
+        "Value: 5 + 3",
+        "Value: 53",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "The expression 5 + 3 is evaluated first (giving 8), then the result is output. You can chain multiple << operators to output multiple items."
+    },
+    {
+      "question": "What is wrong with this code?\n\n```cpp\nint 2ndNumber = 10;\n```",
+      "answers": [
+        "Variable names cannot start with a number",
+        "Missing semicolon",
+        "int is the wrong type",
+        "Nothing is wrong"
+      ],
+      "correct": 0,
+      "explanation": "Variable names in C++ must start with a letter or underscore, not a number. Valid names: number2, _2ndNumber, secondNumber"
+    },
+    {
+      "question": "What will this code output?\n\n```cpp\nint x = 5;\nx = x + 1;\ncout << x;\n```",
+      "answers": [
+        "6",
+        "5",
+        "x + 1",
+        "1"
+      ],
+      "correct": 0,
+      "explanation": "x starts at 5, then x = x + 1 adds 1 to x (making it 6). The final value of x is 6, which is then output."
+    },
+    {
+      "question": "Which statement correctly declares and initializes a string variable?",
+      "answers": [
+        "string name = \"John\";",
+        "String name = \"John\";",
+        "string name = 'John';",
+        "char name = \"John\";"
+      ],
+      "correct": 0,
+      "explanation": "In C++, strings are lowercase 'string' (with #include <string>), use double quotes for the text, and can hold multiple characters."
+    },
+    {
+      "question": "What does the `bool` data type store?",
+      "answers": [
+        "true or false values",
+        "Decimal numbers",
+        "Text strings",
+        "Single characters"
+      ],
+      "correct": 0,
+      "explanation": "The bool (boolean) data type can only store two values: true or false. It's used for conditions and logical operations."
+    },
+    {
+      "question": "What will this code output?\n\n```cpp\ndouble price = 19.99;\ncout << \"Price: $\" << price;\n```",
+      "answers": [
+        "Price: $19.99",
+        "Price: $price",
+        "Price: $20",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "The string \"Price: $\" is output first, then the value of the price variable (19.99) is output. Chaining << allows multiple outputs."
+    },
+    {
+      "question": "What happens if you try to store the value 3.7 in an `int` variable?",
+      "answers": [
+        "The decimal part is truncated, storing 3",
+        "It stores 3.7 correctly",
+        "It rounds up to 4",
+        "It causes a compilation error"
+      ],
+      "correct": 0,
+      "explanation": "When a decimal value is assigned to an int, the decimal portion is truncated (cut off), not rounded. 3.7 becomes 3, and 3.9 also becomes 3."
+    },
+    {
+      "question": "What is the purpose of `using namespace std;`?",
+      "answers": [
+        "Allows using cout and cin without std:: prefix",
+        "Imports all C++ libraries",
+        "Starts the main function",
+        "Declares variables"
+      ],
+      "correct": 0,
+      "explanation": "using namespace std; lets you use cout, cin, endl, and string without writing std:: before each one. Without it, you'd write std::cout instead of cout."
+    }
+  ],
+  "hard": [
+    {
+      "question": "What will this code output?\n\n```cpp\nint a = 5, b = 2;\ndouble result = a / b;\ncout << result;\n```",
+      "answers": [
+        "2",
+        "2.5",
+        "2.0",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Even though result is a double, a/b performs integer division first (5/2 = 2), then converts 2 to 2.0. To get 2.5, cast one operand: (double)a / b"
+    },
+    {
+      "question": "What is the output of this code?\n\n```cpp\nchar letter = 'A';\ncout << letter + 1;\n```",
+      "answers": [
+        "66",
+        "B",
+        "A1",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "When you add a number to a char, it's treated as its ASCII value. 'A' = 65, so 65 + 1 = 66. To output 'B', use: cout << (char)(letter + 1);"
+    },
+    {
+      "question": "Which code correctly reads a full line of text including spaces?",
+      "answers": [
+        "getline(cin, text);",
+        "cin >> text;",
+        "cin.get(text);",
+        "scanf(text);"
+      ],
+      "correct": 0,
+      "explanation": "cin >> stops at whitespace, so it can't read sentences. getline(cin, variable) reads the entire line including spaces until Enter is pressed."
+    },
+    {
+      "question": "What will this code output?\n\n```cpp\nint x = 10;\ncout << x++ << \" \" << x;\n```",
+      "answers": [
+        "10 11",
+        "11 11",
+        "10 10",
+        "11 12"
+      ],
+      "correct": 0,
+      "explanation": "x++ is post-increment: it uses the current value (10) first, then increments x to 11. So the output is 10 followed by 11."
+    },
+    {
+      "question": "What is the problem with this code?\n\n```cpp\nint age;\ncout << \"Your age is: \" << age;\n```",
+      "answers": [
+        "age is used without being initialized",
+        "Missing semicolon",
+        "cout cannot output integers",
+        "Nothing is wrong"
+      ],
+      "correct": 0,
+      "explanation": "Using an uninitialized variable leads to undefined behavior - it could contain any random value (garbage value). Always initialize variables: int age = 0;"
+    },
+    {
+      "question": "What will this code output?\n\n```cpp\ndouble d = 3.14159;\ncout << (int)d;\n```",
+      "answers": [
+        "3",
+        "3.14159",
+        "4",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "(int)d is called type casting - it converts the double to an integer by truncating the decimal part. 3.14159 becomes 3."
+    },
+    {
+      "question": "What is wrong with this code?\n\n```cpp\nconst int MAX = 100;\nMAX = 200;\n```",
+      "answers": [
+        "You cannot change the value of a const variable",
+        "MAX should be lowercase",
+        "Missing data type",
+        "Nothing is wrong"
+      ],
+      "correct": 0,
+      "explanation": "The const keyword makes a variable constant - its value cannot be changed after initialization. Attempting to modify it causes a compilation error."
+    },
+    {
+      "question": "What happens when you run this code?\n\n```cpp\nint num;\ncin >> num;\ncout << num * 2;\n```\n\nAnd the user types: abc",
+      "answers": [
+        "cin fails and num keeps its previous/garbage value",
+        "It outputs 'abcabc'",
+        "The program crashes",
+        "It outputs 0"
+      ],
+      "correct": 0,
+      "explanation": "When cin expects a number but receives text, it enters a fail state. The variable may contain garbage, and subsequent cin operations will also fail without clearing the error."
+    },
+    {
+      "question": "What is the output?\n\n```cpp\nint a = 5;\nint b = a;\na = 10;\ncout << b;\n```",
+      "answers": [
+        "5",
+        "10",
+        "15",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "When b = a is executed, b gets a COPY of a's value (5). Changing a later doesn't affect b. Variables store their own independent copies of values."
+    },
+    {
+      "question": "Which declaration creates a variable that can store values from -32,768 to 32,767?",
+      "answers": [
+        "short int num;",
+        "unsigned int num;",
+        "long int num;",
+        "char num;"
+      ],
+      "correct": 0,
+      "explanation": "short int (or just short) typically uses 2 bytes and stores values from -32,768 to 32,767. unsigned int only stores positive values, and long int stores larger ranges."
+    }
+  ]
+}
